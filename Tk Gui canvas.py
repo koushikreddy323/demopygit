@@ -1,0 +1,12 @@
+from tkinter import *
+box=Tk()
+box.geometry('400x400')
+c=Canvas(box,bg='orange',height=100,width=10)
+c2=Canvas(box,bg='blue',height=100,width=10)
+c3=Canvas(box,bg='green',height=100)
+tx1=Label(box,text='welcome to tkinter',font=('Arial italic',20))
+tx1.place(x=50,y=50)
+c.pack()
+c2.pack()
+c3.pack()
+box.mainloop()
