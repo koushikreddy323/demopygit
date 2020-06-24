@@ -1146,6 +1146,25 @@ else:
     messagebox.showerror('Login','Signup terminated')
 
 box.mainloop()
+---------------------------------------------------------------
+1       activebackground	It represents the background of the button when the mouse hover the button.
+2	activeforeground	It represents the font color of the button when the mouse hover the button.
+3	Bd	                It represents the border width in pixels.
+4	Bg			It represents the background color of the button.
+5	Command			It is set to the function call which is scheduled when the function is called.
+6	Fg			Foreground color of the button.
+7	Font			The font of the button text.
+8	Height			The height of the button. The height is represented in the number of text lines for the textual lines or the number of pixels for the images.
+10	Highlightcolor		The color of the highlight when the button has the focus.
+11	Image			It is set to the image displayed on the button.
+12	justify			It illustrates the way by which the multiple text lines are represented. It is set to LEFT for left justification, RIGHT for the right 						justification, and CENTER for the center.
+13	Padx			Additional padding to the button in the horizontal direction.
+14	pady			Additional padding to the button in the vertical direction.
+15	Relief			It represents the type of the border. It can be SUNKEN, RAISED, GROOVE, and RIDGE.
+17	State			This option is set to DISABLED to make the button unresponsive. The ACTIVE represents the active state of the button.
+18	Underline		Set this option to make the button text underlined.
+19	Width			The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.
+20	Wraplength		If the value is set to a positive number, the text lines will be wrapped to fit within this length.
 
 
 
