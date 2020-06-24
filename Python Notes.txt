@@ -1147,7 +1147,7 @@ else:
 
 box.mainloop()
 ---------------------------------------------------------------
-1       activebackground	It represents the background of the button when the mouse hover the button.
+1   activebackground	It represents the background of the button when the mouse hover the button.
 2	activeforeground	It represents the font color of the button when the mouse hover the button.
 3	Bd	                It represents the border width in pixels.
 4	Bg			It represents the background color of the button.
