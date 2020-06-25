@@ -1166,6 +1166,62 @@ box.mainloop()
 19	Width			The width of the button. It exists as a number of letters for textual buttons or pixels for image buttons.
 20	Wraplength		If the value is set to a positive number, the text lines will be wrapped to fit within this length.
 
+**********************CHEAK BOX**************************************
+from tkinter import *
+box=Tk()
+box.geometry('200x200')
+cb1=IntVar()
+cb2=IntVar()
+cb3=IntVar()
+chbt1=Checkbutton(box,text='C',variable=cb1,onvalue=1,offvalue=0)
+chbt2=Checkbutton(box,text='Java',variable=cb2,onvalue=1,offvalue=0)
+chbt3=Checkbutton(box,text='Python',variable=cb3,onvalue=1,offvalue=0)
+chbt1.place(x=20,y=10)
+chbt2.place(x=20,y=30)
+chbt3.place(x=20,y=50)
+box.mainloop()
+
+***************************CANVAS***************************************
+from tkinter import *
+box=Tk()
+box.geometry('400x400')
+c=Canvas(box,bg='orange',height=100,width=10)
+c2=Canvas(box,bg='blue',height=100,width=10)
+c3=Canvas(box,bg='green',height=100)
+tx1=Label(box,text='welcome to tkinter',font=('Arial italic',20))
+tx1.place(x=50,y=50)
+c.pack()
+c2.pack()
+c3.pack()
+box.mainloop()
+
+**************************EXAMPLE 1*************************************
+from tkinter import *
+from tkinter import messagebox
+box=Tk()
+box.geometry('400x400')
+def click():
+    messagebox.showinfo('login','Login successful')
+
+cvs=Canvas(box,bg='pink',height=400,width=400).pack()
+tx1=Label(box,text='Login',font=('Arial bold',20),fg='green')
+tx1.place(x=150,y=0)
+tx2=Label(box,text='Email',font=('courier',15),fg='green')
+tx2.place(x=40,y=50)
+tx2=Label(box,text='password',font=('courier',15),fg='green')
+tx2.place(x=40,y=90)
+ent1=Entry(box)
+ent2=Entry(box)
+ent1.place(x=200,y=50)
+ent2.place(x=200,y=90)
+cb1=IntVar()
+cbtn=Checkbutton(box,text='I Accept terms and conditions',variable=cb1,onvalue=1,offvalue=0)
+cbtn.place(x=40,y=130)
+bt1=Button(box,text='Login',font=('arial',15),fg='green',bg='orange',activebackground='red',command=click)
+bt1.place(x=150,y=170)
+box.mainloop()
+
+***************************
 
 
 
