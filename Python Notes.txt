@@ -1248,7 +1248,74 @@ mb.menu.add_command(label='Diesel',command=lambda:print('it is diesel'))
 mb.menu.add_command(label='Cng',command=lambda:print('it is cng'))
 mb.pack()
 box.mainloop()
+------------------------menu 2---------------------------------------------
+from tkinter import Toplevel, Button, Tk, Menu
 
+top = Tk()
+menubar = Menu(top)
+file = Menu(menubar, tearoff=0)
+file.add_command(label="New")
+file.add_command(label="Open")
+file.add_command(label="Save")
+file.add_command(label="Save as...")
+file.add_command(label="Close")
 
+file.add_separator()
 
+file.add_command(label="Exit", command=top.quit)
+
+menubar.add_cascade(label="File", menu=file)
+edit = Menu(menubar, tearoff=0)
+edit.add_command(label="Undo")
+
+edit.add_separator()
+
+edit.add_command(label="Cut")
+edit.add_command(label="Copy")
+edit.add_command(label="Paste")
+edit.add_command(label="Delete")
+edit.add_command(label="Select All")
+
+menubar.add_cascade(label="Edit", menu=edit)
+help = Menu(menubar, tearoff=0)
+help.add_command(label="About")
+menubar.add_cascade(label="Help", menu=help)
+
+top.config(menu=menubar)
+top.mainloop()
+---------------------------------------Radio Button-------------------------
+from tkinter import *
+box=Tk()
+box.geometry('300x250')
+lbl=Label(box,text='Select the language',fg='blue').pack()
+v=IntVar()
+rb1=Radiobutton(box,text='C',variable=v,value=1,command=lambda :print('selected value is',v.get())).place(x=50,y=50)
+rb1=Radiobutton(box,text='Java',variable=v,value=2,command=lambda :print('selected value is',v.get())).place(x=50,y=80)
+rb1=Radiobutton(box,text='Python',variable=v,value=3,command=lambda :print('selected value is',v.get())).place(x=50,y=110)
+box.mainloop()
+--------------------------------------Scale--------------------------------
+from tkinter import *
+box=Tk()
+box.geometry('350x350')
+v=DoubleVar()
+scale=Scale(box,variable=v,from_=1,to=50,orient=HORIZONTAL).pack(anchor=CENTER)
+btn=Button(box,text='value',command=lambda :print(v.get())).pack(anchor=CENTER)
+box.mainloop()
+-------------------------------------Scroll Bar------------------------------
+from tkinter import *
+
+top = Tk()
+sb = Scrollbar(top)
+sb.pack(side=RIGHT, fill=Y)
+
+mylist = Listbox(top, yscrollcommand=sb.set)
+
+for x in range(30):
+    mylist.insert(END, "Number " + str(x))
+
+mylist.pack(side=LEFT)
+sb.config(command=mylist.yview)
+
+mainloop()
+*********************************
 
