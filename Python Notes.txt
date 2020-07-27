@@ -1347,5 +1347,16 @@ btm=Label(lf2,text='Add negative comments here...')
 btm.pack()
 
 box.mainloop()
-***************************
+***************************Split function***********************
+x='split function used to split the string'
+for x in x.split():
+	if x[0]=='s':
+	print(x)
+--------------------------------------------
+print([x for x in range(1,51) if x%3==0])
+--------------------------------------------
+'''
+TO MULTILINE COMMENTS
+'''
+-------------------------------------------
 
