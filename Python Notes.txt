@@ -49,7 +49,7 @@ a= """koushik,hp,pc"""
 
    thislist = ["apple","orange","banana"]  // to replace one of the list items
    thislist[1]="curry"
-   print (thislist)
+   print (thislist)			                        
 >>>['apple', 'curry', 'banana'] 
   
     thislist.append("grapes") // To add at the end of array {append}
@@ -1358,6 +1358,7 @@ print([x for x in range(1,51) if x%3==0])
 '''
 TO MULTILINE COMMENTS
 '''
+#######################################PRACTICE CODES############################
 ********************************SHUFFLE************************
 from random import shuffle
 ex=[1,20,12,25,21,5]
@@ -1365,5 +1366,56 @@ def shuffled(ex):
   shuffle(ex)
   print(ex)
 shuffled(ex)
+
+******To cheak if the starting letters of two words are same*****
+x=('Levelhead Lama')
+def read(x):
+  s1,s2=x.split()
+  if s1[0]==s2[0]:
+    print(True)
+  else:
+    print(False)
+read(x)
+----------------------------------------
+
+def read(n1,n2):
+  if n1+n2==20 or n1==20 or n2==20:
+    print(True)
+  else:
+    print(False)
+read(10,10)
+----------------------------------------
+def mf(x):
+  result=''
+  for index,y in enumerate(x):
+    if index==0 or index==3:
+      result+=y.upper()
+    else:
+      result+=y.lower()
+  print(result)
+mf('macdonals')
+---------------------------------------
+def mf(x):
+  print(' '.join(x.split()[::-1]))
+mf('I am Home')
+---------------------------------------
+def mf(x):
+  if abs(100-x)<=10 or abs(200-x)<=10:
+    print(True)
+  else:
+    print(False)
+mf(296)
+---------------------------------------
+#password generator
+from random import shuffle
+ex=('a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 0 1 2 3 4 5 6 7 8 9 ! @ # $ % ^ & *')
+v=ex.split()
+def shuffled(v):
+  shuffle(v)
+  print(''.join(v)[:8])
+shuffled(v)
+-----------------------------------------------
+
+
 
 
