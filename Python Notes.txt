@@ -1429,6 +1429,26 @@ def has(x):
     print(''.join(y)*3,end="")
 has('Hello')
 ------------------------------------------------
+if there is a 007 in the given list then return True else False
+def spy(nums):
+  s=[0,0,7,'x']
+  for x in nums:
+    if x==s[0]:
+      s.pop(0)
+  if len(s)==1:
+    print(True)
+  else:
+    print(False)
+spy([1,2,4,0,7,0,7,5])
+----------------------------------------------------
+def snakes(num):
+  if num%2==0:
+    print('Even')
+  else:
+    print('Odd')
+nbrs=[2,5,7]
+print(list(map(snakes,nbrs)))
+----------------------------------------------------
 
 
 
