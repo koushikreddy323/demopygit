@@ -1449,6 +1449,16 @@ def snakes(num):
 nbrs=[2,5,7]
 print(list(map(snakes,nbrs)))
 ----------------------------------------------------
+def unqlist(z):
+  j=[]
+  for x in z:
+    if x not in j:
+      j.append(x)
+    else:
+      pass
+  print(j)
+unqlist([1,1,1,2,2,3,4,4,5,5,5])
+-----------------------------------------------------
 
 
 
