@@ -1,4 +1,4 @@
-Python was created by GUIDO VAN ROSSUM in 1991
+﻿Python was created by GUIDO VAN ROSSUM in 1991
 
 Printing the type:
 x=5
@@ -1568,9 +1568,86 @@ class game():
       position=int(input('Enter your position(1-9): '))
     print(position)
   player_choice(board,space_avlb)
-  
 
-  
+***********************************************************************************************************************************
+open cmd-> go to location where code is located(like desktop or c:\\users)->by using the commands "cd Desktop" (Current Directory)
+TO go back to the previous directory use" cd .." command (cd space dot dot)
+-----------------------------------------------------------------------------------------------------------------------------------
+To get the perfect score on pylint some of the rules to be followed are:
+1. Start code with a multi-line command(''' something ''').
+2. Add a line space after the command and start a function in which it should start from the multi-line command as well.
+3. Then give a tab or 4 spaces for indentation.
+4. After the logic completion add an empty line and call function(my_fun()).
+5. No line should be more than 100 chars.
+6. Finally add an empty line.
+That's it. This is how you get a 10.0/10.0 for a code in pylint.
+*********************************************************************************************************************************
+------------------------------------------------------------UNIT TESTING---------------------------------------------------------
+def unitvolume(l):
+    return l*l*l
+
+import unittest
+from cap_test import *
+class Basic_Testing(unittest.TestCase):
+    def test_one(self):
+        self.assertEqual(unitvolume(2),8)
+        self.assertEqual(unitvolume(3),27)
+        self.assertEqual(unitvolume(1),1)
+if __name__=='__main__':
+    unittest.main()
+---------------------------------------------------------------------------------------------------------------------------------
+***********************************************************MILESTONE 2 WARMUP PROJECT********************************************
+'''
+MILESTONE PROJECT 2
+'''
+import random
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen',
+         'King', 'Ace')
+values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
+            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
+
+class Card:
+
+    def __init__(self,suit,rank):
+        self.suit=suit
+        self.rank=rank
+        self.value=values[rank]
+
+    def __str__(self):
+        return self.rank+' of '+self.suit
+y=Card(suits[0],ranks[2])
+class Deck:
+
+    def __init__(self):
+        self.all_cards=[]
+        for x in suits:
+            for y in ranks:
+                self.all_cards.append(Card(x,y))
+
+    def shuffle(self):
+        random.shuffle(self.all_cards)
+
+    def deal_one(self):
+        return self.all_cards.pop()
+
+class Player:
+
+    def __init__(self,name):
+        self.name=name
+        self.all_cards=[]
+
+    def remove_one(self):
+        return self.all_cards.pop(0)
+
+    def add_cards(self,new_cards):
+        if type(new_cards)==type([]): #If new_cards is of type list we have to use extend
+            self.all_cards.extend(new_cards)
+        else:
+            self.all_cards.append(new_cards)
+
+    def __str__(self):
+        return f'player {self.name} has {len(self.all_cards)} cards.'
 
 
 
