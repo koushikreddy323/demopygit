@@ -1,0 +1,12 @@
+Here function inside function are defined.By mentioning @ we can dump the function into the main function
+def first(new):
+  def second():
+    print('this is first one')
+    new()
+    print('this is last one')
+  return second()
+
+@first
+def secondfn():
+  print('this is middle one')
+ 
