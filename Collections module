@@ -1,0 +1,23 @@
+from collections import Counter
+c='siuhewisjjnfsdufhjdsvn'
+x=Counter(c)
+print(x.most_common(3))
+--------------------------------------
+DEFAULT DICT
+d={'age':10}
+print(d['age'])
+print(d['ag'])-----HERE I WILL GET A KEY ERROR.BY USING DEFAULT DICT WE CHANGE IT
+
+from collections import defaultdict
+c=defaultdict(lambda:0)
+c['cat']='jonny'
+print(c['cat'])
+print(c['caat'])---HERE IT RETURNS THE DEFAULT VALUE OF 0
+-----------------------------------------
+NAMED TUPLE
+from collections import namedtuple
+dog= namedtuple('dog',['name','age','bread'])
+sam =dog(name='sam',age=5,bread='lab')
+print(sam.age)
+
+
