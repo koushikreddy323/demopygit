@@ -1648,6 +1648,24 @@ class Player:
 
     def __str__(self):
         return f'player {self.name} has {len(self.all_cards)} cards.'
+	
+------------------------------------------------------------------------------------------------------------------------------
+**************************************REGULAR EXPRESSIONS*************************************
+import re
+text='Searching for the mobile number'
+pattern='mobile'
+result= re.search(pattern,text)
+print(result)
+HERE THE RESULT WILL BE THE FIRST INSTANCE.IF WE WANT THE ALL INSTANCES THEN USE  || re.findall ||------------
+result= re.findall(pattern,text)
+--------------------------------
+import re
+text='my mobile number is 123-456-7892'
+phone=re.search(r'\d\d\d-\d\d\d-\d\d\d\d',text)
+or
+phone=re.search(r'\d{3}-\d{3}-\d{4}',text)
+print(phone.group())
+---------------------------------
 
 
 
