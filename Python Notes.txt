@@ -1665,7 +1665,17 @@ phone=re.search(r'\d\d\d-\d\d\d-\d\d\d\d',text)
 or
 phone=re.search(r'\d{3}-\d{3}-\d{4}',text)
 print(phone.group())
----------------------------------
+************************************TIMING CODE**********************************************
+import timeit
+statement='''
+mod1(10)
+'''
+setup='''
+def mod1(n):
+  return(str(num) for num in range(n))
+'''
+print(timeit.timeit(statement,setup,number=10000))
+-----------------------------------------------------------------------------------------------
 
 
 
