@@ -1675,7 +1675,24 @@ def mod1(n):
   return(str(num) for num in range(n))
 '''
 print(timeit.timeit(statement,setup,number=10000))
------------------------------------------------------------------------------------------------
+
+***************************************WEB SCRAPING***************************************
+
+WEB SCRAPING IS USED TO GET ALL THE DATA FROM A WEBPAGE !
+Firstly we need to install bs4,requests,lxml
+import requests
+import bs4
+request=requests.get('https://cricbuzz.com')
+request.text---------------------------THIS GETS THE SOURCE CODE OF THE WEBSITE.
+HERE TO GET THE CODE IN THE SAME FORMAT AS IT SHOWS IN THE SITE WE HAVE TO GET TO SOUP.
+soup= BeautifulSoup(requests.text,'lxml')
+soup-----------------------------------THIS GETS INTO THE FORMAT OF THE WEBSITE.
+soup.select('title')[0].getText--------HERE IN PLACE OF TITLE WE CAN PLACE WHAT WE NEED LIKE DIV,P,HEAD. HERE THE SOUP WILL BE IN LIST FORMAT SO WE NEED TO GRAB THE 0TH ELEMENT.
+
+TO GET ALL THE SECTION HEADINGS FROM WIKIPEDIA PAGE  (https://en.wikipedia/wiki/internet')
+soup.select('.toctext')
+for x in soup.select('.toctext'):
+    print(x.next)----------------------FROM THIS WE WILL GET THE LIST OF ALL THE SECTIONS IN THAT WIKI PAGE
 
 
 
