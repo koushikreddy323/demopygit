@@ -12,9 +12,21 @@ HERE TO GET THE CODE IN THE SAME FORMAT AS IT SHOWS IN THE SITE WE HAVE TO GET T
 soup= BeautifulSoup(requests.text,'lxml')
 soup-----------------------------------THIS GETS INTO THE FORMAT OF THE WEBSITE.
 soup.select('title')[0].getText--------HERE IN PLACE OF TITLE WE CAN PLACE WHAT WE NEED LIKE DIV,P,HEAD. HERE THE SOUP WILL BE IN LIST FORMAT SO WE NEED TO GRAB THE 0TH ELEMENT.
-
+---------------------------------------------------------------------------------------------------------
 TO GET ALL THE SECTION HEADINGS FROM WIKIPEDIA PAGE  (https://en.wikipedia/wiki/internet')
 soup.select('.toctext')
 for x in soup.select('.toctext'):
     print(x.next)----------------------FROM THIS WE WILL GET THE LIST OF ALL THE SECTIONS IN THAT WIKI PAGE
+---------------------------------------------------------------------------------------------------------
+TO READ THE IMAGE FROM WIKIPEDIA AND DOWNLOAD ON COMPUTER
+
+res=requests.get('https://en.wikipedia.org/wiki/Royal_Challengers_Bangalore')
+soup=bs4.BeautifulSoup(res.text,'lxml')
+(soup.select('.image')[4])------------THIS IS THE CLASS NAME FROM THE WEBSITE AND BELOW IS THE LINK OF IMAGE SRC.
+c=requests.get('https://upload.wikimedia.org/wikipedia/commons/6/66/Kit_right_arm_yellowborder.png')
+f=open('rcb2.png','wb')
+f.write(c.content)
+f.close()
+---------------------------------------------------------------------------------------------------------
+
 
