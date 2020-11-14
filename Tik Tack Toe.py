@@ -76,8 +76,7 @@ while True:
             dispboard(board)
             position=player_choice(board)
             place_marker(board,Koushik_marker,position)
-            if win_cheaker(board,Koushik_marker):
-                dispboard(board)
+            if win_cheaker(board,Koushik_marker)==True:
                 print('Congragulations! Koushik, you have won the game')
                 game_on=False
             else:
@@ -92,7 +91,6 @@ while True:
             position=player_choice(board)
             place_marker(board,Abhi_marker,position)
             if win_cheaker(board,Abhi_marker)==True:
-                dispboard(board)
                 print('Congragulations! Abhi, you have won the game')
                 game_on=False
             else:
