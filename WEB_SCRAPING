@@ -1,5 +1,5 @@
 REFERENCE LINK----https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/13-Web-Scraping/00-Guide-to-Web-Scraping.ipynb-----------
-
+------------------http://quotes.toscrape.com/
 
 
 WEB SCRAPING IS USED TO GET ALL THE DATA FROM A WEBPAGE !
@@ -52,5 +52,48 @@ for x in two_star_rating_books:
     print(i,'.',x)
     i+=1
 ---------------------------------------------------------------------------------------------------------
+TO GET ALL THE NAMES OF AUTHORS IN A WEBPAGE
 
+res=requests.get('http://quotes.toscrape.com')
+soup=bs4.BeautifulSoup(res.text,'lxml')
+x=soup.select('.author')
+authors=set()
+for name in soup.select('.author'):
+    authors.add(name.text)
+print(authors)
+---------------------------------------------------------------------------------------------------------
+TO GET ALL THE QUOTES IN A PAGE
 
+res=requests.get('http://quotes.toscrape.com/page/2')
+soup=bs4.BeautifulSoup(res.text,'lxml')
+x=soup.select('.text')
+quotes=[]
+for quote in soup.select('.text'):
+    quotes.append(quote.text)
+i=1
+for x in quotes:
+    print(i,'.',x)
+    i+=1
+---------------------------------------------------------------------------------------------------------
+TO GET TOP 10 TAGS IN WEBSITE
+
+res=requests.get('http://quotes.toscrape.com/page/1')
+soup=bs4.BeautifulSoup(res.text,'lxml')
+x=soup.select('.tag-item')
+
+for v in soup.select('.tag-item'):
+    print(v.text)
+--------------------------------------------------------------------------------------------------------
+TO GET ALL THE UNIQUE AUTHORS IN ALL PAGES OF A WEBSITE
+
+base_url='http://quotes.toscrape.com/page/{}'
+authors=set()
+for page in range(1,11):
+    derived_url=base_url.format(page)
+    res=requests.get(derived_url)
+    soup=bs4.BeautifulSoup(res.text,'lxml')
+    x=soup.select('.author')
+    for name in x:
+        authors.add(name.text)
+print(authors)
+---------------------------------------------------------------------------------------------------------
