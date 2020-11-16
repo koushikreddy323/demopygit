@@ -1,0 +1,20 @@
+#REFERENCE LINK-------https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/15-PDFs-and-Spreadsheets/01-Working-with-PDFs.ipynb
+
+# TO READ A PDF FILE
+import PyPDF2
+f=open('Working_Business_Proposal.pdf','rb')  #READ BINARY
+pdf_reader=PyPDF2.PdfFileReader(f)
+page_one=pdf_reader.getPage(0)
+page_text=page_one.extractText()
+print(page_text)
+f.close()
+
+# WE CAN NOT EXACTLY WRITE A PDF FILE BUT WE CAN COPY DATA TO ANOTHER FILE BY CREATING ONE
+f=open('Working_Business_Proposal.pdf','rb')
+pdf_reader=PyPDF2.PdfFileReader(f)
+page_one=pdf_reader.getPage(0)
+pdf_writer=PyPDF2.PdfFileWriter()
+pdf_writer.addPage(page_one)
+new=open('new_PDF_file','wb')
+pdf_writer.write(new)
+f.close()
